@@ -22,9 +22,9 @@ const pageTransition = () => {
     //section active class
     for (let i of allSections) {
         i.addEventListener('click', (event) => {
-            //  console.log(event.target.dataset.controlId);
-            const controlId = event.target.dataset.controlId;
-            if (controlId) {
+            // console.log(event.target.dataset.id);
+            const id = event.target.dataset.id;
+            if (id) {
                 //remove active from the other element
                 sectBtn.forEach((s) => {
                     s.classList.remove('active');
@@ -35,13 +35,14 @@ const pageTransition = () => {
                 sections.forEach((s) => {
                     s.classList.remove('active');
                 });
-                const element = document.getElementById(controlId);
+                const element = document.getElementById(id);
                 element.classList.add('active');
-
             }
-        })
+        });
 
     }
+
+
 
 };
 

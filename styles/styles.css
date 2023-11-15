@@ -19,7 +19,7 @@
   --color-gray6: rgb(124, 30, 101);
   --br-sm-2: 14px;
   --box-shadow-1: 0px 3px 18px rgb(255, 255, 255);
-  --box-shadow-2: 0px 3px 18px rgb(85, 155, 113);
+  --box-shadow-2: 0px 3px 30px rgb(255, 255, 255);
 }
 
 body {
@@ -60,19 +60,16 @@ a {
 .sec1 {
   display: none;
   transform: scale(1) translateY(0);
-  background-color: rgb(49, 1, 49);
 }
 
 .sec2 {
   display: none;
   transform: scale(1) translateY(0);
-  background-color: yellow;
 }
 
 .sec3 {
   display: none;
   transform: scale(1) translateY(0);
-  background-color: red;
 }
 
 .sec4 {
@@ -83,6 +80,19 @@ a {
 .sec5 {
   display: none;
   transform: scale(1) translateY(0);
+}
+
+.active {
+  display: block;
+  animation-duration: 1.5s;
+  animation-iteration-count: 1;
+  animation-name: activeAnimation;
+  animation-delay: 0.1s;
+}
+@keyframes activeAnimation {
+  from {
+    transform: translateY(-500px) scale(1.8);
+  }
 }
 
 .controlls {
@@ -119,6 +129,67 @@ a {
   pointer-events: none;
 }
 .controlls .control:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
   box-shadow: var(--box-shadow-2);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 14rem;
+  margin-left: 20rem;
+}
+.header-content .left-header {
+  display: flex;
+  justify-content: center;
+}
+.header-content .left-header .h-shape {
+  -webkit-clip-path: polygon(0 0, 8% 0, 25% 100%, 0% 100%);
+          clip-path: polygon(0 0, 8% 0, 25% 100%, 0% 100%);
+  background-color: var(--color-secondary);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.header-content .left-header img {
+  position: relative;
+  margin-top: 7rem;
+  transition: all 0.5s ease-in-out;
+}
+.header-content .left-header img:hover {
+  transform: translateX(-30px);
+}
+.header-content .right-header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.header-content .right-header .p {
+  width: 580px;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+.header-content .right-header .name {
+  font-size: 3rem;
+}
+.header-content .right-header .name span {
+  color: var(--color-secondary);
+}
+.header-content .right-header .main-btn .btn-text,
+.header-content .right-header .main-btn .btn-icon {
+  border: 3px solid transparent;
+  border-radius: 30px;
+  padding: 14px;
+  transition: all 0.5s ease-in-out;
+}
+.header-content .right-header .main-btn .btn-text:hover,
+.header-content .right-header .main-btn .btn-icon:hover {
+  background-color: rgba(221, 136, 170, 0.595);
+  color: rgba(0, 0, 0, 0.706);
+  font-weight: 400;
 }/*# sourceMappingURL=styles.css.map */
