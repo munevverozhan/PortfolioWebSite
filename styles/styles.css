@@ -60,16 +60,19 @@ a {
 .sec1 {
   display: none;
   transform: scale(1) translateY(0);
+  background-color: rgb(49, 1, 49);
 }
 
 .sec2 {
   display: none;
   transform: scale(1) translateY(0);
+  background-color: yellow;
 }
 
 .sec3 {
   display: none;
   transform: scale(1) translateY(0);
+  background-color: red;
 }
 
 .sec4 {
@@ -85,15 +88,15 @@ a {
 .controlls {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  margin-top: 15%;
-  margin-right: 3rem;
+  position: absolute;
+  top: 26%;
+  right: 3rem;
   gap: 1.8rem;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.55s ease-in-out;
 }
 .controlls .active-btn {
   background-color: var(--color-secondary) !important;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.55s ease-in-out;
 }
 .controlls .active-btn i {
   color: var(--color-white) !important;
