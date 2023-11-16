@@ -6,7 +6,7 @@
 }
 
 :root {
-  --color-primary: rgb(43, 80, 108);
+  --color-primary: rgb(9, 36, 56);
   --color-secondary: rgb(86, 165, 127);
   --color-white: white;
   --color-black: rgb(0, 0, 0);
@@ -84,14 +84,13 @@ a {
 
 .active {
   display: block;
-  animation-duration: 1.5s;
+  animation-duration: 2s;
   animation-iteration-count: 1;
   animation-name: activeAnimation;
-  animation-delay: 0.1s;
 }
 @keyframes activeAnimation {
   from {
-    transform: translateY(-500px) scale(1.8);
+    transform: translateX(-200px) scale(1);
   }
 }
 
@@ -102,7 +101,7 @@ a {
   top: 26%;
   right: 3rem;
   gap: 1.8rem;
-  transition: all 0.55s ease-in-out;
+  transition: all 0.05s ease-in-out;
 }
 .controlls .active-btn {
   background-color: var(--color-secondary) !important;
@@ -133,63 +132,147 @@ a {
   box-shadow: var(--box-shadow-2);
 }
 
-.header-content {
+.main-content .header-content {
   display: flex;
   align-items: center;
-  gap: 14rem;
-  margin-left: 20rem;
-}
-.header-content .left-header {
-  display: flex;
   justify-content: center;
+  gap: 1rem;
+  position: absolute;
+  top: 3%;
 }
-.header-content .left-header .h-shape {
-  -webkit-clip-path: polygon(0 0, 8% 0, 25% 100%, 0% 100%);
-          clip-path: polygon(0 0, 8% 0, 25% 100%, 0% 100%);
+.main-content .header-content .left-header {
+  display: flex;
+  align-items: center;
+}
+.main-content .header-content .left-header .h-shape {
+  -webkit-clip-path: polygon(10% 0, 3% 0%, 10% 80%, 1% 100%);
+          clip-path: polygon(10% 0, 3% 0%, 10% 80%, 1% 100%);
   background-color: var(--color-secondary);
+  position: absolute;
   width: 100%;
   height: 100%;
-  position: absolute;
   left: 0;
   top: 0;
 }
-.header-content .left-header img {
+.main-content .header-content .left-header .w-shape {
+  -webkit-clip-path: polygon(10% 5%, 20% 10%, 0% 80%, 5% 100%);
+          clip-path: polygon(10% 5%, 20% 10%, 0% 80%, 5% 100%);
+  background-color: rgb(167, 66, 83);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.main-content .header-content .left-header img {
+  -webkit-clip-path: circle(28%);
+          clip-path: circle(28%);
   position: relative;
-  margin-top: 7rem;
+  left: -53px;
+  filter: contrast(150%);
+}
+.main-content .header-content .right-header {
+  display: flex;
+  flex-direction: column;
+}
+.main-content .header-content .right-header .p {
+  width: 750px;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
+.main-content .header-content .right-header .name {
+  font-size: 3rem;
+}
+.main-content .header-content .right-header .name span {
+  color: var(--color-secondary);
+}
+.main-content .about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3.5rem;
+  padding-bottom: 2rem;
+  gap: 5rem;
+}
+.main-content .about-content .right-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.main-content .about-content .right-about .about-item {
+  border: 5px solid var(--color-gray5);
+  border-radius: 8px;
+  box-shadow: 0px 0px 70px rgb(128, 35, 134);
   transition: all 0.5s ease-in-out;
 }
-.header-content .left-header img:hover {
-  transform: translateX(-30px);
+.main-content .about-content .right-about .about-item:hover {
+  cursor: default;
+  transform: translateY(-5px);
+  border-color: var(--color-secondary);
 }
-.header-content .right-header {
+.main-content .about-content .right-about .about-item .abt-text {
+  padding: 1.5rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.header-content .right-header .p {
-  width: 580px;
-  margin-top: 3rem;
-  margin-bottom: 4rem;
-  line-height: 2rem;
-  font-size: 1.5rem;
-}
-.header-content .right-header .name {
+.main-content .about-content .right-about .about-item .abt-text .large-text {
   font-size: 3rem;
+  font-weight: 700;
 }
-.header-content .right-header .name span {
-  color: var(--color-secondary);
+.main-content .btn-con {
+  margin-top: 2rem;
 }
-.header-content .right-header .main-btn .btn-text,
-.header-content .right-header .main-btn .btn-icon {
-  border: 3px solid transparent;
+.main-content .btn-con .main-btn {
+  border: 3px solid var(--color-secondary);
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 700;
+  padding: 14px;
+  transition: all 0.5s ease-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 270px;
+  height: 70px;
+}
+.main-content .btn-con .main-btn .btn-text {
+  background-color: transparent;
+}
+.main-content .btn-con .main-btn .btn-icon {
+  border: 2px solid var(--color-secondary);
   border-radius: 30px;
   padding: 14px;
-  transition: all 0.5s ease-in-out;
+  background-color: var(--color-secondary);
 }
-.header-content .right-header .main-btn .btn-text:hover,
-.header-content .right-header .main-btn .btn-icon:hover {
+.main-content .btn-con .main-btn:hover {
   background-color: rgba(221, 136, 170, 0.595);
   color: rgba(0, 0, 0, 0.706);
-  font-weight: 400;
+  transform: translateY(-300);
+}
+.main-content .main .about .main-title {
+  text-align: center;
+}
+.main-content .main .about .main-title h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+  font-family: "Times New Roman", Times, serif;
+}
+.main-content .main .about .main-title span {
+  color: var(--color-secondary);
+}
+.main-content .main .about .main-title .bg-text {
+  width: 800px;
+  color: var(--color-gray2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 6.3rem;
+  font-family: "Times New Roman", Times, serif;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
 }/*# sourceMappingURL=styles.css.map */
