@@ -136,13 +136,14 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 20rem;
   position: absolute;
-  top: 3%;
+  top: 18%;
 }
 .main-content .header-content .left-header {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .main-content .header-content .left-header .h-shape {
   -webkit-clip-path: polygon(10% 0, 3% 0%, 10% 80%, 1% 100%);
@@ -168,7 +169,7 @@ a {
   -webkit-clip-path: circle(28%);
           clip-path: circle(28%);
   position: relative;
-  left: -53px;
+  right: -150px;
   filter: contrast(150%);
 }
 .main-content .header-content .right-header {
@@ -193,61 +194,157 @@ a {
   grid-template-columns: repeat(2, 1fr);
   padding-top: 3.5rem;
   padding-bottom: 2rem;
-  gap: 5rem;
+  gap: 3rem;
+  align-items: center;
 }
 .main-content .about-content .right-about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 .main-content .about-content .right-about .about-item {
-  border: 5px solid var(--color-gray5);
+  border: 5px solid var(--color-gray1);
   border-radius: 8px;
-  box-shadow: 0px 0px 70px rgb(128, 35, 134);
+  box-shadow: 0px 0px 70px rgb(174, 181, 81);
   transition: all 0.5s ease-in-out;
+  margin: 2rem;
+  background-color: rgb(0, 0, 0);
 }
 .main-content .about-content .right-about .about-item:hover {
-  cursor: default;
-  transform: translateY(-5px);
+  cursor: pointer;
+  transform: translateY(-8px);
   border-color: var(--color-secondary);
 }
 .main-content .about-content .right-about .about-item .abt-text {
-  padding: 1.5rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
 }
 .main-content .about-content .right-about .about-item .abt-text .large-text {
   font-size: 3rem;
   font-weight: 700;
+  color: var(--color-secondary);
+}
+.main-content .about-content .right-about .about-item .abt-text .small-text {
+  padding-left: 4rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem;
+  color: var(--color-gray4);
+}
+.main-content .about-content .right-about .about-item .abt-text .small-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 2rem;
+  height: 4px;
+  align-items: center;
+  background-color: rgb(92, 55, 61);
+}
+.main-content .about-content .left-about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.main-content .about-content .left-about h4 {
+  color: rgb(0, 0, 0);
+  font-size: 2.5rem;
+  text-shadow: 1px -5px 5px rgb(255, 255, 255);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.main-content .about-content .left-about p {
+  font-size: 20px;
+  letter-spacing: 2px;
+  line-height: 2rem;
+  color: var(--color-gray0);
+}
+.main-content .about-content .left-about .btn-con {
+  align-self: flex-start;
+}
+.main-content .about-stats .progress-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.main-content .about-stats .progress-bars .progress-bar {
+  display: flex;
+}
+.main-content .about-stats .progress-bars .progress-bar .prog-title {
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 200px;
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con {
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con .prog-text {
+  color: var(--color-gray5);
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con .progress {
+  width: 50%;
+  height: 0.45rem;
+  margin-left: 5rem;
+  background-color: rgb(254, 254, 255);
+  position: absolute;
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con .progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-secondary);
+  height: 100%;
+  transition: all 8s ease-in-out;
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con .progress .html1 {
+  width: 90%;
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con .progress .html2 {
+  width: 70%;
+}
+.main-content .about-stats .progress-bars .progress-bar .progress-con .progress .html3 {
+  width: 30%;
+}
+.main-content .stat-title {
+  font-size: 3rem;
+  margin: 3rem 0;
+  color: rgb(6, 6, 6);
+  text-shadow: 1px -5px 5px white;
+  text-transform: uppercase;
+  text-align: center;
 }
 .main-content .btn-con {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .main-content .btn-con .main-btn {
   border: 3px solid var(--color-secondary);
   border-radius: 30px;
   color: inherit;
   font-weight: 700;
-  padding: 14px;
+  padding: 8px 0 8px 8px;
   transition: all 0.5s ease-out;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 270px;
-  height: 70px;
+  width: 200px;
+  height: 50px;
 }
 .main-content .btn-con .main-btn .btn-text {
   background-color: transparent;
 }
 .main-content .btn-con .main-btn .btn-icon {
-  border: 2px solid var(--color-secondary);
+  border: 3px solid var(--color-secondary);
   border-radius: 30px;
-  padding: 14px;
+  padding: 10px;
   background-color: var(--color-secondary);
 }
 .main-content .btn-con .main-btn:hover {
-  background-color: rgba(221, 136, 170, 0.595);
+  background-color: rgba(248, 248, 248, 0.753);
   color: rgba(0, 0, 0, 0.706);
   transform: translateY(-300);
 }
