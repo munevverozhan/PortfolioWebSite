@@ -294,7 +294,8 @@ a {
     }
 
     .about-stats {
-//    position: relative;
+
+        //    position: relative;
         .progress-bars {
             display: flex;
             flex-direction: column;
@@ -350,9 +351,65 @@ a {
             }
         }
     }
+
+    .timeline {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        justify-content: space-evenly;
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 4rem;
+            align-items: center;
+
+            .timeline-icon {
+                i {
+                    font-size: 2rem;
+                    color: rgb(219, 128, 128);
+
+                }
+
+            }
+
+            .timeline-duration {
+                display: flex;
+                color: inherit;
+                text-transform: uppercase;
+                align-items: center;
+                border-radius: 30px;
+                border: 1px solid transparent;
+                background-color: var(--color-gray5);
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+
+            h5 {
+                display: flex;
+                text-transform: uppercase;
+                gap: 1rem;
+                align-items: center;
+                font-size: 20px;
+            }
+
+            span {
+                color: rgb(255, 0, 128);
+            }
+
+            p {
+                display: inline-block;
+                font-size: 1.3rem;
+                color: rgb(55, 130, 130);
+            }
+        }
+    }
+
     .stat-title {
         font-size: 3rem;
-        margin: 3rem 0;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
         color: rgb(6, 6, 6);
         text-shadow: 1px -5px 5px white;
         text-transform: uppercase;
@@ -395,37 +452,93 @@ a {
         }
     }
 
-    .main {
-        .about {
-            .main-title {
-                text-align: center;
+    .main-title {
+        text-align: center;
 
-                h2 {
-                    position: relative;
-                    text-transform: uppercase;
-                    font-size: 4rem;
-                    font-weight: 700;
-                    font-family: 'Times New Roman', Times, serif;
+        h2 {
+            position: relative;
+            text-transform: uppercase;
+            font-size: 4rem;
+            font-weight: 700;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        span {
+            color: var(--color-secondary);
+        }
+
+        .bg-text {
+            width: 800px;
+            color: var(--color-gray2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 6.3rem;
+            font-family: 'Times New Roman', Times, serif;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            font-weight: 800;
+        }
+    }
+
+    .port-text {
+        margin: 6rem 0rem;
+        text-align: center;
+    }
+
+    .portfolios {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 2rem;
+
+        .portfolio-item {
+            .image {
+                img {
+                    width: 120%;
+                    border: 5px solid transparent;
+                    border-radius: 12px;
+                }
+            }
+
+            .hover-items {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+                opacity: 0;
+                transform: scale(0);
+                h3 {
+                    font-size: 1.5rem;
+                    color: var(--color-white);
+                    margin-right: 2rem;
                 }
 
-                span {
-                    color: var(--color-secondary);
+                .icons {
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    font-size: 2.5rem;
+                    .icon-github {
+                        color: rgb(31, 95, 127);                       
+                    }
+
+                    .icon-medium {
+                        color: purple;
+                    }
+
+                    .icon-linkedin {
+                        color: rgb(86, 86, 225);
+                    }
                 }
 
-                .bg-text {
-                    width: 800px;
-                    color: var(--color-gray2);
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    font-size: 6.3rem;
-                    font-family: 'Times New Roman', Times, serif;
-                    z-index: -1;
-                    transform: translate(-50%, -50%);
-                    font-weight: 800;
-                }
+            }
+            .hover-items:hover{
+                opacity: 1;
+                transform: scale(1);
             }
         }
     }
+
 
 }
