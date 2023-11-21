@@ -365,7 +365,7 @@ a {
 .main-content .btn-con {
   margin-top: 1rem;
 }
-.main-content .btn-con .main-btn {
+.main-content .main-btn {
   border: 3px solid var(--color-secondary);
   border-radius: 30px;
   color: inherit;
@@ -378,16 +378,16 @@ a {
   width: 200px;
   height: 50px;
 }
-.main-content .btn-con .main-btn .btn-text {
+.main-content .main-btn .btn-text {
   background-color: transparent;
 }
-.main-content .btn-con .main-btn .btn-icon {
+.main-content .main-btn .btn-icon {
   border: 3px solid var(--color-secondary);
   border-radius: 30px;
   padding: 10px;
   background-color: var(--color-secondary);
 }
-.main-content .btn-con .main-btn:hover {
+.main-content .main-btn:hover {
   background-color: rgba(248, 248, 248, 0.753);
   color: rgba(0, 0, 0, 0.706);
   transform: translateY(-300);
@@ -418,7 +418,7 @@ a {
   font-weight: 800;
 }
 .main-content .port-text {
-  margin: 6rem 0rem;
+  padding: 2rem 0rem;
   text-align: center;
 }
 .main-content .portfolios {
@@ -427,29 +427,53 @@ a {
   align-items: center;
   gap: 2rem;
 }
+.main-content .portfolios .portfolio-item {
+  position: relative;
+}
 .main-content .portfolios .portfolio-item .image img {
-  width: 120%;
-  border: 5px solid transparent;
-  border-radius: 12px;
+  width: 100%;
+  height: 200px;
+  border-radius: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main-content .portfolios .portfolio-item .hover-items {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  flex-direction: column;
+  border-radius: 30px;
+  transition: all 0.6s ease-in-out;
+  background-color: var(--color-secondary);
   opacity: 0;
-  transform: scale(0);
+  transform: scale(1);
+  gap: 1.2rem;
 }
 .main-content .portfolios .portfolio-item .hover-items h3 {
   font-size: 1.5rem;
   color: var(--color-white);
-  margin-right: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 .main-content .portfolios .portfolio-item .hover-items .icons {
   display: flex;
   align-items: center;
   gap: 2rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
+}
+.main-content .portfolios .portfolio-item .hover-items .icons .icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 60%;
+  background-color: rgb(255, 253, 132);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main-content .portfolios .portfolio-item .hover-items .icons .icon-github {
   color: rgb(31, 95, 127);
@@ -463,4 +487,176 @@ a {
 .main-content .portfolios .portfolio-item .hover-items:hover {
   opacity: 1;
   transform: scale(1);
+}
+.main-content .blogs-content .blogs {
+  display: grid;
+  grid-template-columns: repeat(2, 5fr);
+  align-items: center;
+  gap: 4rem;
+  margin-top: 6rem;
+}
+.main-content .blogs-content .blogs .blog {
+  position: relative;
+  box-shadow: 0px 0px 20px rgb(177, 167, 25);
+  background: linear-gradient(30deg, var(--color-gray2), white);
+  transition: all 0.55s ease-in-out;
+}
+.main-content .blogs-content .blogs .blog img {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(50);
+  transition: all 0.55s ease-in-out;
+}
+.main-content .blogs-content .blogs .blog:hover {
+  box-shadow: 0px 0px 50px rgb(194, 182, 18);
+  transform: translateY(-10px);
+}
+.main-content .blogs-content .blogs .blog:hover img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+.main-content .blogs-content .blogs .blog .blog-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 1rem;
+  gap: 2rem;
+  border-top: 5px solid rgba(3, 63, 40, 0.685);
+}
+.main-content .blogs-content .blogs .blog .blog-text h4 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: black;
+}
+.main-content .blogs-content .blogs .blog .blog-text p {
+  line-height: 2rem;
+}
+.main-content h4 {
+  margin-top: 3rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.main-content .contact-content-con {
+  display: flex;
+  margin-top: 3.5rem;
+  gap: 2rem;
+}
+.main-content .contact-content-con .left-contact {
+  flex: 2;
+}
+.main-content .contact-content-con .left-contact .left-contact-p {
+  line-height: 2rem;
+  font-weight: 600;
+  color: rgb(193, 252, 255);
+  text-shadow: 0px 6px 1px rgb(0, 0, 0);
+  word-spacing: 5px;
+  margin-bottom: 2rem;
+}
+.main-content .contact-content-con .left-contact .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3rem;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-item .icon {
+  display: grid;
+  grid-template-columns: 50px auto;
+  align-items: center;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-item .icon i {
+  color: rgb(192, 19, 19);
+  font-size: 1.6rem;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-item .icon span {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-item p {
+  font-weight: 700;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-icons .contact-icon {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-icons .contact-icon a {
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  transition: all 1s ease-in-out;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-icons .contact-icon a i {
+  color: rgb(255, 255, 255);
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-icons .contact-icon a:hover {
+  background-color: rgb(151, 235, 207);
+  transform: translateY(-7px);
+  cursor: pointer;
+}
+.main-content .contact-content-con .left-contact .contact-info .contact-icons .contact-icon a:hover i {
+  color: rgb(10, 105, 10);
+}
+.main-content .contact-content-con .right-contact {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+.main-content .contact-content-con .right-contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+}
+.main-content .contact-content-con .right-contact .contact-form .input-control {
+  color: black;
+}
+.main-content .contact-content-con .right-contact .contact-form .input-control input,
+.main-content .contact-content-con .right-contact .contact-form .input-control textarea {
+  width: 100%;
+  background: linear-gradient(45deg, rgba(191, 211, 79, 0.9), rgba(46, 129, 81, 0.3), rgba(206, 77, 206, 0.6));
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: 600;
+  font-family: inherit;
+  text-align: center;
+  border-radius: 30px;
+  border: none;
+  line-height: 3rem;
+  outline: 4px groove;
+  resize: none;
+}
+.main-content .contact-content-con .right-contact .contact-form .input-control textarea {
+  height: 250px;
+  text-align: left;
+  padding: 0.5rem;
+}
+.main-content .contact-content-con .right-contact .contact-form .i-c-2 {
+  display: flex;
+}
+.main-content .contact-content-con .right-contact .contact-form .i-c-2 :last-child {
+  margin-left: 1.2rem;
+}
+.main-content .contact-content-con .right-contact .contact-form .submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.main-content .contact-content-con .right-contact .contact-form .submit-btn .btn-text {
+  text-transform: uppercase;
 }/*# sourceMappingURL=styles.css.map */
