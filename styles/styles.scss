@@ -23,6 +23,20 @@
 
 }
 
+.light-mode {
+    --color-primary: rgb(0, 85, 165);
+    --color-secondary: rgb(86, 165, 127);
+    --color-white: white;
+    --color-black: rgb(0, 0, 0);
+    --color-gray0: gray;
+    --color-gray1: rgb(123, 110, 110);
+    --color-gray2: rgb(77, 66, 66);
+    --color-gray3: rgb(145, 131, 131);
+    --color-gray4: rgb(129, 113, 113);
+    --color-gray5: rgb(176, 128, 136);
+    --color-gray6: rgb(124, 30, 101);
+}
+
 body {
     font-family: 'Edu TAS Beginner', cursive;
     background-color: var(--color-primary);
@@ -140,44 +154,67 @@ a {
     }
 }
 
+.theme-btn {
+    position: fixed;
+    top: 5%;
+    right: 4.5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(105, 105, 105);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+
+    i {
+        color: rgb(175, 175, 175);
+        transition: all 1s ease;
+        pointer-events: none;
+        font-size: 1.4rem;
+    }
+
+    &:hover {
+        i {
+            color: white;
+        }
+    }
+
+    &:active {
+        transform: translateY(-3px);
+    }
+}
+
 .main-content {
     .header-content {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
-        justify-content: center;
-        gap: 20rem;
-        position: absolute;
-        top: 18%;
+        width: 100%;
+        height: 100%;
+        justify-items: center;
 
         .left-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
 
             .h-shape {
-                clip-path: polygon(10% 0, 3% 0%, 10% 80%, 1% 100%); // ( genişlik yükseklik )
-                background-color: var(--color-secondary);
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                left: 0;
-                top: 0;
-            }
-
-            .w-shape {
-                clip-path: polygon(10% 5%, 20% 10%, 0% 80%, 5% 100%);
                 background-color: rgb(167, 66, 83);
                 position: absolute;
+                clip-path: polygon(0% 100%, 100% 0%, 100% 0%, 100% 100%);
                 width: 100%;
                 height: 100%;
                 left: 0;
                 top: 0;
+                z-index: -1;
             }
 
             img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 clip-path: circle(28%);
                 position: relative;
-                right: -150px;
+                z-index: 1;
                 filter: contrast(150%);
             }
         }
@@ -185,17 +222,22 @@ a {
         .right-header {
             display: flex;
             flex-direction: column;
+            width: 70%;
+            height: 50%;
+            left: 50%;
+            position: absolute;
+            //align-items: center;
+            justify-content: center;
 
             .p {
-                width: 750px;
-                margin-top: 1.5rem;
-                margin-bottom: 1rem;
+                margin: 1.5rem 50% 1rem 1rem;
                 line-height: 2rem;
                 font-size: 1.5rem;
             }
 
             .name {
-                font-size: 3rem;
+                margin: 1.5rem 50% 1rem 1rem;
+                font-size: 2rem;
 
                 span {
                     color: var(--color-secondary);
@@ -417,7 +459,7 @@ a {
     }
 
     .btn-con {
-        margin-top: 1rem;
+        margin: 1.5rem 50% 1rem 1rem;
     }
 
     .main-btn {
