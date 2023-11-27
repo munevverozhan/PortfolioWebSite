@@ -50,11 +50,10 @@ section {
   position: absolute;
   left: 0;
   top: 0;
-  padding: 3rem 18rem;
 }
 
 header {
-  height: 100vh;
+  min-height: 100vh;
   color: var(--color-white);
   overflow: hidden;
 }
@@ -115,7 +114,6 @@ a {
   top: 26%;
   right: 3rem;
   gap: 1.8rem;
-  transition: all 0.05s ease-in-out;
 }
 .controlls .active-btn {
   background-color: var(--color-secondary) !important;
@@ -135,6 +133,7 @@ a {
   display: flex;
   justify-content: center;
   box-shadow: var(--box-shadow-1);
+  transition: all 0.55s ease-in-out;
 }
 .controlls .control i {
   font-size: 1.3rem;
@@ -149,11 +148,10 @@ a {
 .theme-btn {
   position: fixed;
   top: 5%;
-  right: 4.5%;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: rgb(105, 105, 105);
+  background-color: rgb(139, 139, 139);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,7 +171,16 @@ a {
   transform: translateY(-3px);
 }
 
+.main-content .header-bg {
+  position: absolute;
+  background-color: rgb(167, 66, 83);
+  -webkit-clip-path: polygon(0% 100%, 100% 0%, 100% 0%, 100% 100%);
+          clip-path: polygon(0% 100%, 100% 0%, 100% 0%, 100% 100%);
+  width: 100%;
+  height: 100%;
+}
 .main-content .header-content {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -181,62 +188,55 @@ a {
   height: 100%;
   justify-items: center;
 }
-.main-content .header-content .left-header .h-shape {
-  background-color: rgb(167, 66, 83);
-  position: absolute;
-  -webkit-clip-path: polygon(0% 100%, 100% 0%, 100% 0%, 100% 100%);
-          clip-path: polygon(0% 100%, 100% 0%, 100% 0%, 100% 100%);
+.main-content .header-content .left-header {
+  position: relative;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
-  z-index: -1;
+  display: flex;
+  justify-content: center;
 }
 .main-content .header-content .left-header img {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   -webkit-clip-path: circle(28%);
           clip-path: circle(28%);
-  position: relative;
-  z-index: 1;
   filter: contrast(150%);
 }
 .main-content .header-content .right-header {
+  position: relative;
   display: flex;
   flex-direction: column;
-  width: 70%;
-  height: 50%;
-  left: 50%;
-  position: absolute;
+  width: 100%;
+  height: 100%;
   justify-content: center;
 }
 .main-content .header-content .right-header .p {
   margin: 1.5rem 50% 1rem 1rem;
   line-height: 2rem;
   font-size: 1.5rem;
+  width: 450px;
 }
 .main-content .header-content .right-header .name {
   margin: 1.5rem 50% 1rem 1rem;
   font-size: 2rem;
+  width: 450px;
 }
 .main-content .header-content .right-header .name span {
   color: var(--color-secondary);
 }
 .main-content .about-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
   padding-top: 3.5rem;
   padding-bottom: 2rem;
   align-items: center;
-  left: 50px;
-  position: absolute;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 0 9rem 0 3rem;
+  gap: 1rem;
 }
 .main-content .about-content .right-about {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   position: relative;
-  padding-right: 180px;
 }
 .main-content .about-content .right-about .about-item {
   border: 5px solid var(--color-gray1);
@@ -285,7 +285,8 @@ a {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 300px;
+  align-items: center;
+  justify-content: center;
 }
 .main-content .about-content .left-about h4 {
   color: rgb(0, 0, 0);
@@ -302,13 +303,11 @@ a {
   color: var(--color-gray0);
 }
 .main-content .about-stats {
-  left: 0px;
-  top: 150%;
-  position: absolute;
+  position: relative;
+  padding: 0 12rem;
 }
 .main-content .about-stats .stat-title {
   position: relative;
-  left: 225px;
 }
 .main-content .about-stats .progress-bars {
   display: flex;
@@ -317,7 +316,6 @@ a {
 }
 .main-content .about-stats .progress-bars .progress-bar {
   display: flex;
-  margin: 0 5.5rem;
 }
 .main-content .about-stats .progress-bars .progress-bar .prog-title {
   text-transform: uppercase;
@@ -327,17 +325,16 @@ a {
 .main-content .about-stats .progress-bars .progress-bar .progress-con {
   display: flex;
   align-items: center;
-  width: 500px;
 }
 .main-content .about-stats .progress-bars .progress-bar .progress-con .prog-text {
   color: var(--color-gray5);
 }
 .main-content .about-stats .progress-bars .progress-bar .progress-con .progress {
-  width: 100%;
+  width: 700px;
   height: 0.45rem;
-  margin-left: 5rem;
+  margin-left: 3rem;
   background-color: rgb(254, 254, 255);
-  position: absolute;
+  position: relative;
 }
 .main-content .about-stats .progress-bars .progress-bar .progress-con .progress span {
   position: absolute;
@@ -360,12 +357,10 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 8rem;
+  margin-top: 5rem;
   gap: 3rem;
-  position: absolute;
-  left: 90px;
-  top: 190%;
-  padding-bottom: 10rem;
+  position: relative;
+  padding: 0 6rem;
 }
 .main-content .timeline .timeline-item {
   display: flex;
@@ -374,7 +369,6 @@ a {
   align-items: center;
   margin-bottom: 2rem;
   position: relative;
-  padding-left: 1rem;
 }
 .main-content .timeline .timeline-item .timeline-icon {
   position: relative;
@@ -400,14 +394,8 @@ a {
   font-size: 2rem;
   color: rgb(219, 128, 128);
 }
-.main-content .timeline .timeline-item .timeline-icon i:hover {
-  cursor: pointer;
-}
-.main-content .timeline .timeline-item .timeline-icon i:hover h5 {
-  background-color: red;
-}
 .main-content .timeline .timeline-item .timeline-duration {
-  width: 175px;
+  width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -426,7 +414,7 @@ a {
   gap: 1rem;
   align-items: center;
   font-size: 20px;
-  width: 250px;
+  width: 300px;
 }
 .main-content .timeline .timeline-item span {
   color: rgb(255, 0, 128);
@@ -434,7 +422,8 @@ a {
 .main-content .timeline .timeline-item .timeline-text {
   font-size: 1.3rem;
   color: rgb(55, 130, 130);
-  width: 500px;
+  width: 650px;
+  resize: none;
 }
 .main-content .stat-title {
   font-size: 3rem;
@@ -477,6 +466,7 @@ a {
   transform: translateY(-300);
 }
 .main-content .main-title {
+  margin-top: 2rem;
   text-align: center;
 }
 .main-content .main-title h2 {
@@ -579,10 +569,11 @@ a {
 }
 .main-content .blogs-content .blogs {
   display: grid;
-  grid-template-columns: repeat(2, 5fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 4rem;
   margin-top: 6rem;
+  padding: 2rem 15rem;
 }
 .main-content .blogs-content .blogs .blog {
   position: relative;
@@ -626,6 +617,7 @@ a {
   line-height: 2rem;
 }
 .main-content h4 {
+  position: relative;
   margin-top: 3rem;
   font-size: 2rem;
   text-transform: uppercase;
@@ -635,6 +627,7 @@ a {
   display: flex;
   margin-top: 3.5rem;
   gap: 2rem;
+  padding: 1rem 10rem;
 }
 .main-content .contact-content-con .left-contact {
   flex: 2;
@@ -748,4 +741,117 @@ a {
 }
 .main-content .contact-content-con .right-contact .contact-form .submit-btn .btn-text {
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 0;
+  }
+  .stat-title {
+    font-size: 2.5rem !important;
+  }
+  .about-content {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .about-content .right-about {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .about-stats {
+    padding: 0 2rem !important;
+  }
+  .progress-con .progress {
+    width: 250px !important;
+  }
+  .timeline {
+    padding-bottom: 1rem !important;
+  }
+  .timeline .timeline-item {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  .timeline .timeline-item .timeline-icon {
+    display: block !important;
+  }
+  .timeline .timeline-item .timeline-icon .line {
+    height: 0 !important;
+  }
+  .timeline .timeline-item .timeline-text {
+    width: 300px !important;
+  }
+  .main-title h2 {
+    font-size: 2rem !important;
+  }
+  .main-title .bg-text {
+    width: 500px !important;
+    font-size: 4.5rem !important;
+  }
+  .port-text {
+    width: 380px;
+    padding: 7rem 2rem 10rem 2rem !important;
+  }
+  .portfolios {
+    grid-template-columns: repeat(1, 1fr) !important;
+    padding: 20rem 3rem 1rem 2rem !important;
+  }
+  .portfolios .portfolio-item {
+    margin-bottom: 1rem;
+  }
+  .blogs {
+    grid-template-columns: repeat(1, 1fr) !important;
+    padding: 3rem 8rem !important;
+  }
+  .contact-content-con {
+    flex-direction: column;
+    margin-top: 0rem !important;
+    padding: 0rem 5rem !important;
+  }
+  h4 {
+    margin-top: 5rem !important;
+  }
+  .theme-btn {
+    top: 14% !important;
+  }
+}
+@media screen and (max-width: 1070px) {
+  .theme-btn {
+    top: 14% !important;
+  }
+  .about-content {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .about-content .right-about {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .progress-con .progress {
+    width: 350px !important;
+  }
+  .portfolios {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media screen and (max-width: 960px) {
+  .progress-bar {
+    flex-direction: column !important;
+  }
+  .header-content {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .header-content .left-header {
+    margin: -5rem auto;
+    width: 10% !important;
+  }
+  .header-content .left-header img {
+    padding: 2rem;
+    -webkit-clip-path: none !important;
+            clip-path: none !important;
+    border-radius: 30px;
+  }
+  .header-content .right-header {
+    grid-row: 1;
+    padding: 2rem;
+  }
+  .controlls {
+    right: 3px !important;
+  }
 }/*# sourceMappingURL=styles.css.map */
